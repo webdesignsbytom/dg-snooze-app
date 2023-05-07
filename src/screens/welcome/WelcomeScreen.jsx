@@ -15,7 +15,7 @@ const WelcomeScreen = () => {
         />
         <View>
           <Text style={styles.textBox}>Welcome To</Text>
-          <Text style={styles.header}>Diggeree-Snooze</Text>
+          <Text style={styles.header}>Pistachio-Snooze</Text>
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('Profile')}
@@ -41,6 +41,10 @@ const WelcomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  screen: {
+    width: deviceWidth,
+    height: deviceHeight,
+  },
   container: {
     width: '100%',
     height: '100%',
