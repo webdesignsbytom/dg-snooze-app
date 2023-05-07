@@ -29,16 +29,14 @@ The app will connect to bluetooth devices.
 
 App developed with:
 
-Frontend: React, JavaScript, Tailwind, Axios, validator, react-native
-
-Backend: Express, Prisma, JavaScript, express-handlebars
+Frontend: React Native, JavaScript, CSS, Axios,
 
 ## Run this project locally
 
 1. Fork this repository and clone the fork to your machine.
 2. Navigate to client and server files and run
 3. `npm install`
-4. `npm start`
+4. `npx expo start`
 
 ## Design Information
 
