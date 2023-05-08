@@ -1,6 +1,14 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
 // Constants
 import { COLOURS, SIZES } from '../../constants';
 // Device Data
@@ -12,34 +20,43 @@ const WelcomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.secondContainer}>
-        <Image
-          style={styles.logo}
-          source={require('../../../assets/psmall.png')}
-        />
-        <View>
-          <Text style={styles.textBox}>Welcome To</Text>
-          <Text style={styles.header}>Pistachio-Snooze</Text>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate('Profile')}
-          >
-            <Text style={styles.buttonText}>See Your Profile</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate('Login')}
-          >
-            <Text style={styles.buttonText}>Login</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate('Sign Up')}
-          >
-            <Text style={styles.buttonText}>Sign Up</Text>
-          </TouchableOpacity>
+      <LinearGradient
+        colors={['#09203f', '#537895']}
+        start={[0.1, 0.1]}
+        style={styles.linearGradient}
+      >
+        <View style={styles.secondContainer}>
+          <Image
+            style={styles.logo}
+            source={require('../../../assets/psmall.png')}
+          />
+          <View>
+            <Text style={styles.textBox}>Welcome To</Text>
+            <Text style={styles.header}>Pistachio-Snooze</Text>
+
+            {/* Buttons */}
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate('Profile')}
+            >
+              <Text style={styles.buttonText}>See Your Profile</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate('Login')}
+            >
+              <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate('Sign Up')}
+            >
+              <Text style={styles.buttonText}>Sign Up</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </LinearGradient>
     </View>
   );
 };
@@ -52,9 +69,6 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: COLOURS.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   secondContainer: {
     width: '100%',
@@ -82,12 +96,13 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     backgroundColor: COLOURS.secondary,
-    padding: 10,
-    marginTop: 10,
+    padding: 12,
+    marginTop: 16,
     borderRadius: 12,
   },
   buttonText: {
     color: COLOURS.text,
+    fontSize: SIZES.medium,
   },
 });
 

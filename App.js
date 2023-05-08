@@ -8,6 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './src/screens/login/LoginScreen';
 import RegisterScreen from './src/screens/register/RegisterScreen';
+import NavLinks from './src/screens/nav/NavLinks';
 
 
 const Stack = createStackNavigator();
@@ -18,7 +19,8 @@ function App() {
     <Stack.Navigator screenOptions={{headerShown: false}} >
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Profile" component={NavLinks} />
+      {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Sign Up" component={RegisterScreen} />
     </Stack.Navigator>
