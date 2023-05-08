@@ -37,7 +37,7 @@ const WelcomeScreen = () => {
             {/* Buttons */}
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigation.navigate('Profile')}
+              onPress={() => navigation.navigate('Nav')}
             >
               <Text style={styles.buttonText}>See Your Profile</Text>
             </TouchableOpacity>
