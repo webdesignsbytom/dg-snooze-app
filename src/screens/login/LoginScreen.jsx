@@ -18,13 +18,15 @@ const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 
 const LoginScreen = () => {
-  const [text, onChangeText] = React.useState('Username');
-  const [pass, onChangePass] = React.useState('Password');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const navigation = useNavigation();
 
-  const buySomeCheese = () => {
+  const handleLogin = () => {
     console.log('Cheese purchase');
+    console.log('email: ' + email);
+    console.log('password: ' + password);
   };
 
   return (
@@ -46,17 +48,24 @@ const LoginScreen = () => {
             <SafeAreaView>
               <TextInput
                 style={styles.input}
-                onChangeText={onChangeText}
-                value={text}
+                placeholder='Email'
+                placeholderTextColor='#AFAFAF'
+                onChangeText={(email) => setEmail(email)}
+                value={email}
               />
               <TextInput
                 style={styles.input}
-                onChangePass={onChangePass}
-                value={pass}
+                placeholder='Password'
+                placeholderTextColor='#AFAFAF'
+                onChangeText={(text) => setPassword(text)}
+                value={password}
+                autoCorrect={false}
+                secureTextEntry
+                autoCapitalize="none"
               />
             </SafeAreaView>
 
-            <TouchableOpacity style={styles.button} onPress={buySomeCheese}>
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
               <Text style={styles.buttonText}>Login Now</Text>
             </TouchableOpacity>
 
@@ -99,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: SIZES.xxLarge,
     textAlign: 'center',
     fontWeight: '900',
-    marginBottom: 16
+    marginBottom: 16,
   },
   subtitle: {
     color: COLOURS.text,

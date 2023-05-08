@@ -7,55 +7,36 @@ import {
   Dimensions,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-// Device Data
-const deviceWidth = Dimensions.get('window').width;
-const deviceHeight = Dimensions.get('window').height;
+import { LinearGradient } from 'expo-linear-gradient';
+import Header from '../../components/common/Header';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <Text>HomeScreenTom</Text>
-      <View>
-        <Text>Don't have an account? </Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Profile')}
-        >
-          <Text>See Your Profile</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text>Buy Cheese</Text>
-        </TouchableOpacity>
-      </View>
+    <View style={styles.screen}>
+      <LinearGradient
+        colors={['#09203f', '#537895']}
+        start={[0.1, 0.1]}
+        style={styles.linearGradient}
+      >
+        <Header />
+        <View style={styles.container}>
+          <Text>Hello</Text>
+        </View>
+      </LinearGradient>
     </View>
   );
-
 };
 
 const styles = StyleSheet.create({
+  screen: {
+    width: '100%',
+    height: '100%',
+  },
   container: {
-    width: deviceWidth,
-    height: deviceHeight,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: 'lightblue',
-    padding: 10,
-    marginTop: 5,
-  },
-  countContainer: {
-    alignItems: 'center',
-    padding: 10,
+    width: '100%',
+    height: '100%',
   },
 });
 

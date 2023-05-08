@@ -22,6 +22,7 @@
     "react-native": "0.71.7",
     "react-native-really-awesome-button": "^2.0.4",
     "react-native-splash-screen": "^3.3.0",
+    "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.18.10"
   },
   "devDependencies": {

@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 // Constants
 import { COLOURS, SIZES } from '../../constants';
 // Components
@@ -26,9 +27,10 @@ const RegisterScreen = () => {
 
   const navigation = useNavigation();
 
-  const buySomeCheese = () => {
+  const handleRegister = () => {
     console.log('Cheese purchase');
     console.log('email', email);
+    console.log('password', password);
   };
 
   return (
@@ -52,38 +54,46 @@ const RegisterScreen = () => {
                 style={styles.input}
                 placeholder='Email'
                 placeholderTextColor='#AFAFAF'
-                onChangeText={(email) => setEmail(email)}
+                onChangeText={(text) => setEmail(text)}
                 value={email}
+                autoCorrect={false}
+                autoCapitalize='none'
               />
 
               <TextInput
                 style={styles.input}
                 placeholder='Username'
                 placeholderTextColor='#AFAFAF'
-                onChangeText={(username) => setUsername(username)}
+                onChangeText={(text) => setUsername(text)}
                 value={username}
+                autoCorrect={false}
+                autoCapitalize='none'
               />
 
               <TextInput
                 style={styles.input}
                 placeholder='Password'
                 placeholderTextColor='#AFAFAF'
-                onChangePass={(password) => setPassword(password)}
+                onChangeText={(text) => setPassword(text)}
                 value={password}
+                autoCorrect={false}
+                autoCapitalize='none'
+                secureTextEntry
               />
 
               <TextInput
-                value={password}
                 style={styles.input}
                 placeholder='Confirm Password'
                 placeholderTextColor='#AFAFAF'
-                onChangeText={(confirmPassword) =>
-                  setConfirmPassword(confirmPassword)
-                }
+                onChangeText={(text) => setConfirmPassword(text)}
+                value={confirmPassword}
+                autoCorrect={false}
+                secureTextEntry
+                autoCapitalize='none'
               />
             </SafeAreaView>
 
-            <TouchableOpacity style={styles.button} onPress={buySomeCheese}>
+            <TouchableOpacity style={styles.button} onPress={handleRegister}>
               <Text style={styles.buttonText}>Sign Up Now</Text>
             </TouchableOpacity>
 
@@ -151,7 +161,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     backgroundColor: COLOURS.gray,
-    borderRadius: 10
+    borderRadius: 10,
   },
   button: {
     alignItems: 'center',
@@ -159,7 +169,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 50,
     padding: 10,
-    borderRadius: 10
+    borderRadius: 10,
   },
   logo: {
     width: 150,

@@ -1,34 +1,47 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+// Constants
 import { COLOURS } from '../../constants';
 
 const Header = () => {
-  const { textStyle, viewStyle } = styles;
+
+  const navigation = useNavigation();
 
   return (
-    <View style={viewStyle}>
-      <Text style={textStyle}>Pistachio-snooze</Text>
+    <View style={styles.screen}>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <Image
+            style={styles.logo}
+            source={require('../../../assets/images/psmall.png')}
+          />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <Image
+            style={styles.logo}
+            source={require('../../../assets/psmall.png')}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
-const styles = {
-  viewStyle: {
-    backgroundColor: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 80,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    elevation: 2,
-    position: 'relative',
+const styles = StyleSheet.create({
+  screen: {
+    width: '100%',
+    height: '100%',
   },
-  textStyle: {
-    fontSize: 20,
-    color: 'white',
-    marginTop: 20,
-    fontWeight: 'bold',
+  container: {
+    width: '100%',
+    display: 'flex',
   },
-};
+  logo: {
+    width: 40,
+    height: 40,
+  },
+});
 
 export default Header;

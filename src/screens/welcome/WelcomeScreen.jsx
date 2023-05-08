@@ -31,8 +31,11 @@ const WelcomeScreen = () => {
             source={require('../../../assets/psmall.png')}
           />
           <View>
-            <Text style={styles.textBox}>Welcome To</Text>
-            <Text style={styles.header}>Pistachio-Snooze</Text>
+            <View>
+              <Text style={styles.subtitle}>Welcome To</Text>
+              <Text style={styles.title}>Pistachio-Snooze</Text>
+              <Text style={styles.smallTextBox}>Track your journey to improved sleep and an end to snoring!</Text>
+            </View>
 
             {/* Buttons */}
             <TouchableOpacity
@@ -63,8 +66,8 @@ const WelcomeScreen = () => {
 
 const styles = StyleSheet.create({
   screen: {
-    width: deviceWidth,
-    height: deviceHeight,
+    width: '100%',
+    height: '100%',
   },
   container: {
     width: '100%',
@@ -78,16 +81,24 @@ const styles = StyleSheet.create({
     display: 'flex',
     gap: 50,
   },
-  textBox: {
+  title: {
     color: COLOURS.text,
     fontSize: SIZES.xxLarge,
     textAlign: 'center',
+    fontWeight: '900',
   },
-  header: {
+  subtitle: {
     color: COLOURS.text,
     fontSize: SIZES.xxLarge,
-    fontWeight: '900',
+    textAlign: 'center',
+    fontStyle: 'italic',
+  },
+  smallTextBox: {
+    color: COLOURS.text,
+    fontSize: SIZES.small,
+    textAlign: 'center',
     marginBottom: 20,
+    marginTop: 20,
   },
   logo: {
     width: 150,
@@ -96,9 +107,11 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     backgroundColor: COLOURS.secondary,
-    padding: 12,
-    marginTop: 16,
-    borderRadius: 12,
+    justifyContent: 'center',
+    height: 50,
+    padding: 10,
+    borderRadius: 10,
+    marginBottom: 10,
   },
   buttonText: {
     color: COLOURS.text,

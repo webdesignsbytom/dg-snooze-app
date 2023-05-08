@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+// Hooks
+import { useTogglePasswordVisibility } from './src/hooks/useTogglePasswordVisibility';
 // Pages
 import HomeScreen from './src/screens/home/HomeScreen';
 import ProfileScreen from './src/screens/profile/ProfileScreen';
