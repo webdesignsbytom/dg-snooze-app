@@ -1,7 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
-import { COLOURS, SIZES } from '../../constants';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+// Constants
+import { COLOURS, SIZES } from '../../constants';
+// Device Data
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();

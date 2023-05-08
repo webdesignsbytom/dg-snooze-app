@@ -6,21 +6,23 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 import React, { useState } from 'react';
 // Constants
 import { COLOURS, SIZES } from '../../constants';
 // Components
 import Header from '../../components/common/Header';
+import { useNavigation } from '@react-navigation/native';
 // Device Data
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 
 const LoginScreen = () => {
-
   const [text, onChangeText] = React.useState('Username');
   const [pass, onChangePass] = React.useState('Password');
+
+  const navigation = useNavigation();
 
   const buySomeCheese = () => {
     console.log('Cheese purchase');
@@ -56,7 +58,13 @@ const LoginScreen = () => {
 
           <View style={styles.linkContainer}>
             <Text style={styles.text}>Don't have an account?</Text>
-            <Text style={styles.text}>Click HERE to sign up!</Text>
+            <Text style={styles.text}>
+              Click{' '}
+              <TouchableOpacity onPress={() => navigation.navigate('Sign Up')}>
+                <Text style={styles.link}>HERE</Text>
+              </TouchableOpacity>{' '}
+              to sign up!
+            </Text>
           </View>
         </View>
       </View>
@@ -75,6 +83,7 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: COLOURS.primary,
     alignItems: 'center',
+    marginTop: 120,
   },
   secondaryContainer: {
     width: '80%',
@@ -92,12 +101,18 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     textAlign: 'center',
   },
+  link: {
+    color: COLOURS.text,
+    fontSize: SIZES.large,
+    marginTop: 10
+  },
   linkContainer: {
     marginTop: 10,
   },
   input: {
     height: 40,
     margin: 12,
+    maxWidth: 300,
     borderWidth: 1,
     padding: 10,
     backgroundColor: COLOURS.gray,
@@ -109,6 +124,7 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+    maxWidth: 300,
   },
   logo: {
     width: 150,
