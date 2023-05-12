@@ -3,11 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 // Hooks
 import { useTogglePasswordVisibility } from './src/hooks/useTogglePasswordVisibility';
-// Pages
+// Screen
 import HomeScreen from './src/screens/home/HomeScreen';
 import ProfileScreen from './src/screens/profile/ProfileScreen';
 import WelcomeScreen from './src/screens/welcome/WelcomeScreen';
-// Utils
 import LoginScreen from './src/screens/login/LoginScreen';
 import RegisterScreen from './src/screens/register/RegisterScreen';
 import NavLinks from './src/screens/nav/NavLinks';
@@ -19,6 +18,8 @@ import ConvertSongScreen from './src/screens/playlists/ConvertSongScreen';
 import ConnectDeviceScreen from './src/screens/device/ConnectDeviceScreen';
 import DeviceDataScreen from './src/screens/device/DeviceDataScreen';
 import EditPlaylistScreen from './src/screens/playlists/EditPlaylistScreen';
+import CalanderScreen from './src/screens/calander/CalanderScreen';
+import AccountStatsScreen from './src/screens/account/AccountStatsScreen';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,8 @@ function App() {
       <Stack.Screen name='Nav' component={NavLinks} />
       <Stack.Screen name='Profile' component={ProfileScreen} />
       <Stack.Screen name='Account' component={AccountScreen} />
+      <Stack.Screen name='Calander' component={CalanderScreen} />
+      <Stack.Screen name='Stats' component={AccountStatsScreen} />
       <Stack.Screen name='Login' component={LoginScreen} />
       <Stack.Screen name='Sign Up' component={RegisterScreen} />
       <Stack.Screen name='Create Playlist' component={CreatePlaylistScreen} />

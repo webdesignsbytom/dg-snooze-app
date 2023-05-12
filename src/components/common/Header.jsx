@@ -36,7 +36,6 @@ const Header = (name) => {
 };
 
 const styles = StyleSheet.create({
-  screen: {},
   container: {
     backgroundColor: '#09203f',
     display: 'flex',
