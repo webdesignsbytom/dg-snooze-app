@@ -16,9 +16,11 @@ The Frontend can be view at [Pistachio Snooze Host]()
 
 ## Home Page
 
+<p>
 <img src='./assets/images/welcome-screen.jpg' alt='welcome screen' style='width: 150px; height: 300px;' />
 <img src='./assets/images/login-screen.jpg' alt='login screen' style='width: 150px; height: 300px;' />
 <img src='./assets/images/register-screen.jpg' alt='register screen' style='width: 150px; height: 300px;' />
+</p>
 
 ## General info
 
