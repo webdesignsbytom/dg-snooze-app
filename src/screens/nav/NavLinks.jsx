@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 // Constants
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLOURS, SIZES } from '../../constants';
+import Header from '../../components/common/Header';
 
 const NavLinks = () => {
   const navigation = useNavigation();
@@ -15,6 +16,8 @@ const NavLinks = () => {
         start={[0.1, 0.1]}
         style={styles.linearGradient}
       >
+        <Header name='Nav' />
+
         <View style={styles.container}>
           <Text>NavLinks</Text>
           {/* Buttons */}

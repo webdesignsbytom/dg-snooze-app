@@ -8,11 +8,11 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { COLOURS, SIZES } from '../../constants';
 import Header from '../../components/common/Header';
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
   const navigation = useNavigation();
-
   return (
     <View style={styles.screen}>
       <LinearGradient
@@ -20,9 +20,9 @@ const HomeScreen = () => {
         start={[0.1, 0.1]}
         style={styles.linearGradient}
       >
-        <Header />
+        <Header name='Home' />
         <View style={styles.container}>
-          <Text>Hello</Text>
+          <Text style={styles.text}>Hello</Text>
         </View>
       </LinearGradient>
     </View>
@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
+  },
+  text: {
+    color: COLOURS.text,
+    fontSize: SIZES.large,
+    textAlign: 'center',
   },
 });
 

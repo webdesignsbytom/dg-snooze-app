@@ -1,28 +1,34 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { IconComponentProvider, Icon } from '@react-native-material/core';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 // Constants
-import { COLOURS } from '../../constants';
+import { COLOURS, SIZES } from '../../constants';
 
-const Header = () => {
-
+const Header = (name) => {
   const navigation = useNavigation();
+  console.log('name', name.name);
 
   return (
-    <View style={styles.screen}>
-      <View style={styles.container}>
+    <View style={styles.container}>
+      <View style={styles.leftContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Image
-            style={styles.logo}
-            source={require('../../../assets/images/psmall.png')}
-          />
+          <IconComponentProvider IconComponent={MaterialCommunityIcons}>
+            <Icon name='home' size={48} color='lightgray' />
+          </IconComponentProvider>
         </TouchableOpacity>
+      </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Image
-            style={styles.logo}
-            source={require('../../../assets/psmall.png')}
-          />
+      <View style={styles.centerContainer}>
+        <Text style={styles.headerText}>{name.name}</Text>
+      </View>
+
+      <View style={styles.rightContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('Nav')}>
+          <IconComponentProvider IconComponent={MaterialCommunityIcons}>
+            <Icon name='menu' size={48} color='lightgray' />
+          </IconComponentProvider>
         </TouchableOpacity>
       </View>
     </View>
@@ -30,17 +36,32 @@ const Header = () => {
 };
 
 const styles = StyleSheet.create({
-  screen: {
-    width: '100%',
-    height: '100%',
-  },
+  screen: {},
   container: {
-    width: '100%',
+    backgroundColor: '#09203f',
     display: 'flex',
+    width: '100%',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingTop: 32,
+    paddingBottom: 12,
+    paddingHorizontal: 16,
+    borderBottomColor: 'lightgray',
+    borderBottomWidth: 2,
   },
   logo: {
-    width: 40,
-    height: 40,
+    width: 52,
+    height: 52,
+  },
+  rightContainer: { justifyContent: 'center' },
+  leftContainer: { justifyContent: 'center' },
+  centerContainer: {
+    justifyContent: 'center',
+  },
+  headerText: {
+    color: COLOURS.text,
+    fontSize: SIZES.xLarge,
+    textAlign: 'center',
   },
 });
 
