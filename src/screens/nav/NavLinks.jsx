@@ -59,7 +59,7 @@ const NavLinks = () => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate('Convert')}
+            onPress={() => navigation.navigate('Convert Song')}
           >
             <Text style={styles.buttonText}>Convert</Text>
           </TouchableOpacity>
@@ -80,6 +80,18 @@ const NavLinks = () => {
             onPress={() => navigation.navigate('Edit Playlist')}
           >
             <Text style={styles.buttonText}>Edit Playlist</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('Start Exercise')}
+          >
+            <Text style={styles.buttonText}>Start Exercise</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('Exercise Active')}
+          >
+            <Text style={styles.buttonText}>Active</Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>

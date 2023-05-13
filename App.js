@@ -20,6 +20,8 @@ import DeviceDataScreen from './src/screens/device/DeviceDataScreen';
 import EditPlaylistScreen from './src/screens/playlists/EditPlaylistScreen';
 import CalanderScreen from './src/screens/calander/CalanderScreen';
 import AccountStatsScreen from './src/screens/account/AccountStatsScreen';
+import InPlayScreen from './src/screens/play/InPlayScreen';
+import StartExerciseScreen from './src/screens/play/StartExerciseScreen';
 
 const Stack = createStackNavigator();
 
@@ -38,10 +40,12 @@ function App() {
       <Stack.Screen name='Create Playlist' component={CreatePlaylistScreen} />
       <Stack.Screen name='Playlists' component={PlaylistsScreen} />
       <Stack.Screen name='Upload' component={UploadSongScreen} />
-      <Stack.Screen name='Convert' component={ConvertSongScreen} />
+      <Stack.Screen name='Convert Song' component={ConvertSongScreen} />
       <Stack.Screen name='Connect Device' component={ConnectDeviceScreen} />
       <Stack.Screen name='My Device' component={DeviceDataScreen} />
       <Stack.Screen name='Edit Playlist' component={EditPlaylistScreen} />
+      <Stack.Screen name='Start Exercise' component={StartExerciseScreen} />
+      <Stack.Screen name='Exercise Active' component={InPlayScreen} />
     </Stack.Navigator>
   );
 }
