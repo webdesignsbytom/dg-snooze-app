@@ -1,6 +1,9 @@
 # Pistachio-Snooze
 
 A sleep tracking and monitoring app for use to help combat and track snoring.
+The app has uploading file features.
+A calander to track your progress.
+An exercise routine to follow and track.
 
 The Frontend can be view at [Pistachio Snooze Host]()
 
@@ -21,6 +24,8 @@ The Frontend can be view at [Pistachio Snooze Host]()
 <img src='./assets/images/register-screen.jpg' alt='register screen' style='width: 150px; height: 300px;' />
 <img src='./assets/images/home-screen.jpg' alt='home screen' style='width: 150px; height: 300px;' />
 <img src='./assets/images/playlists-screen.jpg' alt='playlists screen' style='width: 150px; height: 300px;' />
+<img src='./assets/images/playlist-screen.jpg' alt='playlist screen' style='width: 150px; height: 300px;' />
+<img src='./assets/images/sleep-tracker-screen.jpg' alt='sleep tracker screen' style='width: 150px; height: 300px;' />
 
 ## General info
 
