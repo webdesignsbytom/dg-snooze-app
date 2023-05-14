@@ -1,20 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   Button,
-  Alert, Image
+  Alert,
+  Image,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { Audio } from 'expo-av';
 // Constants
 import { COLOURS, SIZES } from '../../constants';
 import Header from '../../components/common/Header';
 
 const SleepTrackerScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
+
+  const [recording, setRecording] = useState();
+
+  async function startRecording() {
+    try {
+      console.log('Requesting permissions..');
+      await Audio.requestPermissionsAsync();
+      await Audio.setAudioModeAsync({
+        allowsRecordingIOS: true,
+        playsInSilentModeIOS: true,
+      });
+
+      console.log('Starting recording..');
+      const { recording } = await Audio.Recording.createAsync(
+        Audio.RecordingOptionsPresets.HIGH_QUALITY
+      );
+      setRecording(recording);
+      console.log('Recording started');
+    } catch (err) {
+      console.error('Failed to start recording', err);
+    }
+  }
+
+  async function stopRecording() {
+    console.log('Stopping recording..');
+    setRecording(undefined);
+    await recording.stopAndUnloadAsync();
+    await Audio.setAudioModeAsync({
+      allowsRecordingIOS: false,
+    });
+    const uri = recording.getURI();
+    console.log('Recording stopped and stored at', uri);
+  }
 
   return (
     <View style={styles.screen}>
@@ -43,7 +78,7 @@ const SleepTrackerScreen = () => {
           {/* Start Button */}
           <TouchableOpacity
             style={styles.bigButton}
-            onPress={() => deleteSongFromPlaylist(song)}
+            onPress={recording ? stopRecording : startRecording}
           >
             <Text style={styles.buttonText}>Start Tracking</Text>
           </TouchableOpacity>
@@ -130,8 +165,8 @@ const styles = StyleSheet.create({
   mainImage: {
     width: '100%',
     height: '50%',
-    transform: 'rotate(90deg)' 
-  }
+    transform: 'rotate(90deg)',
+  },
 });
 
 export default SleepTrackerScreen;
