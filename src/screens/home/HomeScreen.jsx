@@ -76,7 +76,7 @@ const HomeScreen = (props) => {
               <View style={styles.buttonsContainer}>
                 <TouchableOpacity
                   style={styles.button}
-                  onPress={() => navigation.navigate('Profile')}
+                  onPress={() => navigation.navigate('Start Exercise')}
                 >
                   <Text style={styles.buttonText}>Start Exercise</Text>
                 </TouchableOpacity>
@@ -106,7 +106,7 @@ const HomeScreen = (props) => {
               <View style={styles.doubleButtonsContainer}>
                 <TouchableOpacity
                   style={styles.smallButton}
-                  onPress={() => navigation.navigate('Calander')}
+                  onPress={() => navigation.navigate('Sleep Tracker')}
                 >
                   <Text style={styles.buttonText}>Track Sleep</Text>
                 </TouchableOpacity>

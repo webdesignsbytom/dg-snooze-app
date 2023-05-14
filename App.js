@@ -22,6 +22,7 @@ import CalanderScreen from './src/screens/calander/CalanderScreen';
 import AccountStatsScreen from './src/screens/account/AccountStatsScreen';
 import InPlayScreen from './src/screens/play/InPlayScreen';
 import StartExerciseScreen from './src/screens/play/StartExerciseScreen';
+import SleepTrackerScreen from './src/screens/sleep/SleepTrackerScreen';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,7 @@ function App() {
       <Stack.Screen name='Sign Up' component={RegisterScreen} />
       <Stack.Screen name='Create Playlist' component={CreatePlaylistScreen} />
       <Stack.Screen name='Playlists' component={PlaylistsScreen} />
+      <Stack.Screen name='Sleep Tracker' component={SleepTrackerScreen} />
       <Stack.Screen name='Upload' component={UploadSongScreen} />
       <Stack.Screen name='Convert Song' component={ConvertSongScreen} />
       <Stack.Screen name='Connect Device' component={ConnectDeviceScreen} />

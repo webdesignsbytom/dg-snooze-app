@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -16,6 +16,14 @@ import { COLOURS, SIZES } from '../../constants';
 
 const PlaylistsScreen = () => {
   const navigation = useNavigation();
+
+  const [playlistsList, setPlaylistsList] = useState([
+    { id: 1, title: 'Heavy Metal', songsList: ['getsome', 'badgirl', 'man in the mirror', 'posion', 'mustang sally', 'sweet caroline'] },
+    { id: 2, title: 'Jazz Smooth', songsList: ['getsome', 'badgirl', 'man in the mirror', 'posion', 'mustang sally', 'sweet caroline'] },
+    { id: 3, title: 'Original Stuff', songsList: ['getsome', 'badgirl', 'man in the mirror', 'posion', 'mustang sally', 'sweet caroline'] },
+    { id: 4, title: 'Random Mix', songsList: ['getsome', 'badgirl', 'man in the mirror', 'posion', 'mustang sally', 'sweet caroline'] },
+    { id: 5, title: 'Recommended Plan', songsList: ['getsome', 'badgirl', 'man in the mirror', 'posion', 'mustang sally', 'sweet caroline'] },
+  ])
 
   return (
     <View style={styles.screen}>
@@ -47,12 +55,12 @@ const PlaylistsScreen = () => {
             <View style={styles.playlistDataContainer}>
               <View style={styles.dataContainer}>
                 <View style={styles.textContainer}>
-                  <Text style={styles.dataText}>1. Heavy Metal</Text>
+                  <Text style={styles.dataText}>{playlistsList[0].id} {playlistsList[0].title} </Text>
                 </View>
 
                 <TouchableOpacity
                   style={styles.smallButton}
-                  onPress={() => navigation.navigate('Edit Playlist')}
+                  onPress={() => navigation.navigate('Edit Playlist', playlistsList[0])}
                 >
                   <Text style={styles.buttonText}>EDIT</Text>
                 </TouchableOpacity>
@@ -60,12 +68,12 @@ const PlaylistsScreen = () => {
 
               <View style={styles.dataContainerOdd}>
                 <View style={styles.textContainer}>
-                  <Text style={styles.dataText}>2. Jazz Smooth</Text>
+                <Text style={styles.dataText}>{playlistsList[1].id} {playlistsList[1].title} </Text>
                 </View>
 
                 <TouchableOpacity
                   style={styles.smallButton}
-                  onPress={() => navigation.navigate('Edit Playlist')}
+                  onPress={() => navigation.navigate('Edit Playlist', playlistsList[1])}
                 >
                   <Text style={styles.buttonText}>EDIT</Text>
                 </TouchableOpacity>
@@ -73,12 +81,12 @@ const PlaylistsScreen = () => {
 
               <View style={styles.dataContainer}>
                 <View style={styles.textContainer}>
-                  <Text style={styles.dataText}>3. Original Stuff</Text>
+                <Text style={styles.dataText}>{playlistsList[2].id} {playlistsList[2].title} </Text>
                 </View>
 
                 <TouchableOpacity
                   style={styles.smallButton}
-                  onPress={() => navigation.navigate('Edit Playlist')}
+                  onPress={() => navigation.navigate('Edit Playlist', playlistsList[2])}
                 >
                   <Text style={styles.buttonText}>EDIT</Text>
                 </TouchableOpacity>
@@ -86,12 +94,12 @@ const PlaylistsScreen = () => {
 
               <View style={styles.dataContainerOdd}>
                 <View style={styles.textContainer}>
-                  <Text style={styles.dataText}>4. Random Miz</Text>
+                <Text style={styles.dataText}>{playlistsList[3].id} {playlistsList[3].title} </Text>
                 </View>
 
                 <TouchableOpacity
                   style={styles.smallButton}
-                  onPress={() => navigation.navigate('Edit Playlist')}
+                  onPress={() => navigation.navigate('Edit Playlist', playlistsList[3])}
                 >
                   <Text style={styles.buttonText}>EDIT</Text>
                 </TouchableOpacity>
@@ -99,12 +107,12 @@ const PlaylistsScreen = () => {
 
               <View style={styles.dataContainer}>
                 <View style={styles.textContainer}>
-                  <Text style={styles.dataText}>5. Recommended Plan</Text>
+                <Text style={styles.dataText}>{playlistsList[4].id} {playlistsList[4].title} </Text>
                 </View>
 
                 <TouchableOpacity
                   style={styles.smallButton}
-                  onPress={() => navigation.navigate('Edit Playlist')}
+                  onPress={() => navigation.navigate('Edit Playlist', playlistsList[4])}
                 >
                   <Text style={styles.buttonText}>EDIT</Text>
                 </TouchableOpacity>
@@ -140,6 +148,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 22,
     paddingHorizontal: 22,
+    alignItems: 'center',
   },
   rightContainer: { justifyContent: 'center' },
   leftContainer: { justifyContent: 'center' },
