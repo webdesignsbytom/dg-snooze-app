@@ -19,6 +19,7 @@ The Frontend can be view at [Pistachio Snooze Host]()
 
 ## Home Page
 
+<p>
 <img src='./assets/images/welcome-screen.jpg' alt='welcome screen' style='width: 150px; height: 300px;' />
 <img src='./assets/images/login-screen.jpg' alt='login screen' style='width: 150px; height: 300px;' />
 <img src='./assets/images/register-screen.jpg' alt='register screen' style='width: 150px; height: 300px;' />
@@ -26,6 +27,7 @@ The Frontend can be view at [Pistachio Snooze Host]()
 <img src='./assets/images/playlists-screen.jpg' alt='playlists screen' style='width: 150px; height: 300px;' />
 <img src='./assets/images/playlist-screen.jpg' alt='playlist screen' style='width: 150px; height: 300px;' />
 <img src='./assets/images/sleep-tracker-screen.jpg' alt='sleep tracker screen' style='width: 150px; height: 300px;' />
+</p>
 
 ## General info
 
